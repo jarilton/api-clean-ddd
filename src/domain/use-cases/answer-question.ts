@@ -12,7 +12,11 @@ export class AnswerQuestionUseCase {
     questionId,
     content,
   }: AnswerQuestionUseCaseRequest) {
-    const answer = new Answer(content);
+    const answer = new Answer({
+      content,
+      authorId: instructionId,
+      questionId,
+    });
 
     return answer;
   }
